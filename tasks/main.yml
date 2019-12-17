@@ -34,6 +34,7 @@
         mode: ugo+x
       loop_control:
         label: '{{ item.value.name }}'
+      notify: reload uwsgi apps
       when: item.value.venv_path is defined
       with_dict: '{{ uwsgi_apps }}'
 
